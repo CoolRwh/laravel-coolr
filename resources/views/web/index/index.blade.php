@@ -1,15 +1,29 @@
 @extends('web.public.layouts')
+
+@section('title')
+    十清凉!-首页
+@endsection
+
+@section('article_title')
+    十清凉
+@endsection
+
+@section('desc')
+    A little white programmer in Chengdu
+@endsection
+
+
+
 @section('content')
 
     <article class="kratos-hentry clearfix">
         <div class="kratos-entry-border-new clearfix">
             <div class="kratos-entry-thumb-new">
-                <a href="http://coolr.top/1236.html"><img src="https://w.wallhaven.cc/full/mp/wallhaven-mp7dkm.png"
-                                                          alt="贺 建站一千日整"></a></div>
+                <a href="{{route('web.article.info',[1])}}"><img src="https://i.loli.net/2020/01/12/tvxji7RCLPhyaBG.jpg" alt="贺 建站一千日整"></a></div>
             <div class="kratos-post-inner-new">
                 <header class="kratos-entry-header-new">
-                    <a class="label" href="http://coolr.top/category/daily">日常杂谈</a>
-                    <h2 class="kratos-entry-title-new"><a href="http://coolr.top/1236.html">贺
+                    <a class="label" href="{{route('web.article.info',[1])}}">Mysql</a>
+                    <h2 class="kratos-entry-title-new"><a href="{{route('web.article.info',[1])}}">贺
                             建站一千日整</a></h2>
                 </header>
                 <div class="kratos-entry-content-new">
@@ -20,15 +34,15 @@
             <div class="kratos-post-meta-new">
         <span class="pull-left">
             <a><i class="fa fa-calendar"></i> 2019-10-22</a>
-            <a href="http://coolr.top/1236.html#comments"><i class="fa fa-commenting-o"></i> 35条评论</a>
+            <a href="{{route('web.article.info',[1])}}"><i class="fa fa-commenting-o"></i> 35条评论</a>
         </span>
                 <span class="visible-lg visible-md visible-sm pull-left">
-            <a href="http://coolr.top/1236.html"><i class="fa fa-eye"></i> 2.73k次阅读</a>
+            <a href="{{route('web.article.info',[1])}}"><i class="fa fa-eye"></i> 2.73k次阅读</a>
             <a href="javascript:;" data-action="love" data-id="1236" class="Love"><i class="fa fa-thumbs-o-up"></i> 21人点赞</a>
-            <a href="/?author=1"><i class="fa fa-user"></i> 小白-白</a>
+            <a href="#"><i class="fa fa-user"></i> 小白-白</a>
         </span>
                 <span class="pull-right">
-            <a class="read-more" href="http://coolr.top/1236.html" title="阅读全文">阅读全文 <i
+            <a class="read-more" href="{{route('web.article.info',[1])}}" title="阅读全文">阅读全文 <i
                         class="fa fa-chevron-circle-right"></i></a>
         </span>
             </div>

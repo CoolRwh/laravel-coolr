@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 
-class Login
+class AdminAuth
 {
     /**
      * Handle an incoming request.
@@ -15,11 +15,8 @@ class Login
      */
     public function handle($request, Closure $next)
     {
-        $webUrl = $request->route()->getActionName();
-        $rule = ['App\Http\Controllers\Admin\IndexController@welcome','App\Http\Controllers\Admin\IndexController@index'];
-
-        if (!in_array($webUrl,$rule)){
-           return redirect('http://log.shiqing.com');
+        if (!auth('admin')->id()){
+            return redirect('admin/login')->with('error','请先登录！');
         }
         return $next($request);
     }

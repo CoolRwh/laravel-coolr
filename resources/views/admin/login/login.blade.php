@@ -68,12 +68,21 @@
             </div>
         </div>
         <div class="col-sm-5">
-            <form method="post" id="login" action="{{url('admin/login')}}">
+            @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+                @if(session()->has($msg))
+                    <div class="alert alert-{{$msg}} alert-dismissable" style="text-align: center;">
+                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
+                        <b> {{ session()->get($msg) }}</b>
+                    </div>
+
+                @endif
+            @endforeach
+            <form method="post" id="login" action="{{route('admin.login')}}">
                 <h4 class="no-margins">登录：</h4>
                 <p class="m-t-md">登录到Blog后台</p>
                 @csrf
-                <input type="text" class="form-control uname" name="username" placeholder="用户名" />
-                <input type="password" class="form-control pword m-b" name="password" placeholder="密码" />
+                <input type="text" class="form-control uname" name="username" value="小小" placeholder="用户名" />
+                <input type="password" class="form-control pword m-b" name="password" value="123456" placeholder="密码" />
                 <a href="#" style="color: white">忘记密码了？</a>
                 <a href="#" style="color: white;float: right">立即注册&raquo;</a>
                 <button type="submit" class="btn btn-success btn-block">登录</button>

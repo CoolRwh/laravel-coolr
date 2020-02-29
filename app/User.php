@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -12,11 +11,25 @@ class User extends Authenticatable implements JWTSubject
 
     use Notifiable;
 
-    protected $hidden
-      = [
+    protected $hidden =
+      [
         'password',
         'remember_token',
+        'email_verified_at'
       ];
+
+    protected $table = 'users';
+
+    protected $primaryKey = 'id';
+
+    protected $fillable = ['username','password','email'];
+
+
+
+    public function getType(){
+
+        return $this->hasMany(\App\Model\UserBind::class,'user_id','id');
+    }
 
 
     public function blog(){

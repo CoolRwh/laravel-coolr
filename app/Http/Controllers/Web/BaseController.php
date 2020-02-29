@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web;
 
 use App\Http\Controllers\Controller;
+use App\model\Cate;
 
 
 class BaseController extends Controller
@@ -23,12 +24,7 @@ class BaseController extends Controller
 
 //获取栏目
     public function getCate(){
-        $cate = [
-          ['name' => '文章','url'=>'/'],
-          ['name' => '测试1','url'=>'/'],
-          ['name' => '测试2','url'=>'/'],
-          ['name' => '测试3','url'=>'/'],
-        ];
+       $cate = Cate::all();
         return $cate;
     }
 }

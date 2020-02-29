@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserBind extends Model
+class Cate extends Model
 {
     //
 }

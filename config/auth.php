@@ -78,10 +78,10 @@ return [
             'model' => App\User::class,
         ],*/
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+         'admins' => [
+             'driver' => 'eloquent',
+             'model' => App\model\Admin::class,
+         ],
     ],
 
     /*
