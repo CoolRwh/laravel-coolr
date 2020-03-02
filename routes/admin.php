@@ -27,9 +27,16 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin','middleware'=>['auth.
     //user用户修改
     Route::post('/user/update/{id}','UserController@update')->name('admin.user.update');
 
-    //
-    /*Route::resource('cate','CateController',['names'  =>  'admin.cate']);*/
+    //栏目
+    //Route::resource('cate','CateController');
+//    Route::resource('cate','CateController',['names'  =>  'admin.cate']);
     Route::resource('cate','CateController',['as'  =>  'admin']);
+    //规则
+    Route::resource('rule','RuleController',['as'  =>  'admin']);
+    //角色
+    Route::resource('role','RoleController',['as'  =>  'admin']);
+    //规则
+    Route::resource('permission','PermissionController',['as'  =>  'admin']);
 
 }
 );

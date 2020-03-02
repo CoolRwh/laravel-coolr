@@ -14,7 +14,7 @@
                                     @endforeach
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-dashboard"></i> 功能</a>
+                        <li><a><i class="fa fa-dashboard"></i> 资料</a>
                             <ul class="sub-menu">
                                 <li><a href="http://coolr.top/wp-login.php?action=register">注册</a></li>
                                 <li>

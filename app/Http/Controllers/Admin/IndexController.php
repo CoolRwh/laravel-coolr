@@ -16,7 +16,7 @@ class IndexController extends BaseController
             $data = User::with('getType')->get();
 
 //        return view('admin.index.index',compact('data'));
-        return view('admin.index.welcome',compact('data'));
+        return view('admin.layouts.app',compact('data'));
     }
 
     public function welcome()

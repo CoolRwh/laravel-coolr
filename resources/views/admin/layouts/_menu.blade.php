@@ -21,8 +21,15 @@
                 <div class="logo-element">Coolr</div>
             </li>
 
+            <li>
+                <a  href="{{route('admin')}}">
+                    <i class="fa fa-home"></i>
+                    <span class="nav-label">主页</span>
+                </a>
+            </li>
+
             @foreach($menu as $menus)
-                @if($menus['next'] !== '') <li>
+                @if($menus['next'] != false ) <li>
                     <a href="#">
                         <i class="{{$menus['icon']}}"></i>
                         <span class="nav-label">{{$menus['title']}}</span>
@@ -38,10 +45,11 @@
 
                 </li>@else
                     <li>
-                        <a class="J_menuItem" href="layouts.html">
-                            <i class="fa fa-columns"></i>
-                            <span class="nav-label">布局</span>
+                        <a class="J_menuItem" href="{{$menus['url']}}">
+                            <i class="{{$menus['icon']}}"></i>
+                            <span class="nav-label">{{$menus['title']}}</span>
                         </a>
+                    </li>
                     @endif
                 @endforeach
 

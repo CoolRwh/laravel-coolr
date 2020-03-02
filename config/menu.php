@@ -8,39 +8,35 @@
 
 return [
   [
-    'title' => '主页',
-    'icon'  => 'fa fa-home',
-    'url'   => '#',
-    "permission" => "权限标识",
-    'next'   => [
-      ['title' => '首页',"permission" => "权限标识",'url' => 'admin/welcome'],
-    ],
-  ],
-  [
     'title' => '文章管理',
     'icon'  => 'fa fa fa-bar-chart-o',
     'url'   => '#',
     "permission" => "权限标识",
     'next'   => [
       ['title' => '文章列表',"permission" => "权限标识",'url' => 'admin/cate/2/edit'],
-      ['title' => '文章添加',"permission" => "权限标识",'url' => 'admin/article/add'],
+      ['title' => '栏目列表',"permission" => "权限标识",'url' => 'admin/cate'],
     ],
   ],
   [
-    'title' => '权限管理',
+    'title' => '后台权限',
     'icon'  => 'fa fa-user',
     'url'   => '#',
     "permission" => "权限标识",
     'next'   => [
-      ['title' => '权限列表',"permission" => "权限标识",'url' => 'admin/article/list'],
-      ['title' => '前台用户列表',"permission" => "权限标识",'url' => 'admin/user/list'],
+      ['title' => '角色管理',"permission" => "权限标识",'url' => '/admin/role'],
+      ['title' => '权限管理',"permission" => "权限标识",'url' => 'admin/permission'],
     ],
   ],
   [
-    'title' => '画布',
-    'icon'  => 'fa fa-bar-chart-o',
-    'url'   => '/',
+    'title' => '用户管理',
+    'icon'  => 'fa fa-users',
+    'url'   => '#',
     "permission" => "权限标识",
-    'next'   => '',
+    'next'   => [
+      ['title' => '前台用户',"permission" => "权限标识",'url' => 'admin/article/list'],
+      ['title' => '后台用户',"permission" => "权限标识",'url' => 'admin/article/list'],
+      ['title' => '第三方用户',"permission" => "权限标识",'url' => 'admin/article/list'],
+
+    ],
   ],
 ];
