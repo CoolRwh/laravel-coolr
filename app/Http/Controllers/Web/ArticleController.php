@@ -12,6 +12,7 @@ class ArticleController extends BaseController
     public function info($id){
 
 
+        
         return view('web.article.info');
     }
-}
+}       
