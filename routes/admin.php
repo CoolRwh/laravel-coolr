@@ -10,7 +10,7 @@
 
 
 
-
+//'middleware'=>['auth.admin','web']
 
 Route::group(['prefix' => '/admin', 'namespace' => 'Admin','middleware'=>['auth.admin','web']], function () {
     //后台首页
@@ -28,8 +28,6 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin','middleware'=>['auth.
     Route::post('/user/update/{id}','UserController@update')->name('admin.user.update');
 
     //栏目
-    //Route::resource('cate','CateController');
-//    Route::resource('cate','CateController',['names'  =>  'admin.cate']);
     Route::resource('cate','CateController',['as'  =>  'admin']);
     //规则
     Route::resource('rule','RuleController',['as'  =>  'admin']);

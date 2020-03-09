@@ -9,7 +9,6 @@ use App\User;
 class UserController extends Controller
 {
 
-
     public function list(){
 
         $users = User::paginate(5);

@@ -1,10 +1,9 @@
 <?php
-
-header('Access-Control-Allow-Origin: *');
+/*header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Headers', 'Origin, Content-Type, Cookie, X-CSRF-TOKEN, Accept, Authorization, X-XSRF-TOKEN');
 header('Access-Control-Expose-Headers', 'Authorization, authenticated');
 header('Access-Control-Allow-Methods', 'GET, POST, PATCH, PUT, OPTIONS');
-header('Access-Control-Allow-Credentials', 'true');
+header('Access-Control-Allow-Credentials', 'true');*/
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -38,24 +37,37 @@ header('Access-Control-Allow-Credentials', 'true');
 
 $api = app('Dingo\Api\Routing\Router');
 #默认配置指定版本为v1,可直接通过{host}/api/version访问
-/*$api->version('v1',['namespace'=>'App\Api\Controllers'],function ($api){
-    $api->get('user','UserController@show');
+/*$api->version('v1',['namespace'=>'App\Api\Controllers'],function ($api){ cors
+    $api->get('user','UserController@show');          ['namespace'=>'App\Http\Controllers\api'],
 });*/
-$api->version('v1',['namespace'=>'App\Http\Controllers\api'], function ($api) {
+$api->version('v1',['middleware'=>'cors'] ,function ($api) {
+    $api->get('user','App\Http\Controllers\Api\UserController@getUserList');
     //登陆获取token
-    $api->post('login', 'AuthController@login');
+    $api->post('login', 'APAuthController@login');
 
-    $api->post('me', 'AuthController@me');
-
-    $api->group(['middleware' => 'auth.jwt'], function ($api) {
-
+    $api->group(['middleware' => 'auth.jwt','namespace'=>'App\Http\Controllers\Api'], function ($api) {
 
         $api->post('me', 'AuthController@me');
-        $api->get('user', 'UserController@show');
+
+
         //获取我的博客文章
-        $api->get('get_my_blog', 'BlogController@getUserBlog');
+        $api->get('get_my_blog',function (){
+            dd('get_my_blog');
+        });
 
     });
+});
+
+$api->version('v2',function ($api){
+
+    $api->group(['namespace'=>'App\Http\Controllers\Api'],function ($api){
+
+        $api->post('me',function (){
+            echo 'me-v2';
+        });
+
+    });
+
 });
 
 

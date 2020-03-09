@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CateRequest;
 use App\model\Cate;
 use Illuminate\Http\Request;
 
@@ -33,19 +34,17 @@ class CateController extends Controller
         return view('admin.cate.cate_add_edit');
     }
 
-    /**
-     * @info 栏目添加
-     *
-     * @param  \Illuminate\Http\Request  $request
+    /** @info 栏目添加
+     * @param  \App\Http\Requests\CateRequest  $request
      *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function store(Request $request)
+    public function store(CateRequest $request)
     {
         $cate            = new Cate();
         $cate->cate_name = $request->input('cate_name');
-        $cate->save();
 
+        $cate->save();
         return redirect('admin/cate')->with('success', '添加成功！');
     }
 

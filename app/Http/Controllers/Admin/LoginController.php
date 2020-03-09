@@ -14,8 +14,6 @@ use AuthenticatesUsers;
 
     protected $redirectTo = '/admin';
 
-
-
      public function __construct()
      {
          $this->middleware('guest:admin')->except('logout');
@@ -39,8 +37,7 @@ use AuthenticatesUsers;
     /**
      * 退出到登录页面
      */
-
-    public function logout(Request $request)
+    public function logout()
     {
         if (auth('admin')->id()){
             auth('admin')->logout();
@@ -48,26 +45,12 @@ use AuthenticatesUsers;
 
         return redirect('admin/login')->with('success','退出成功！');
     }
-
     /**
      * 自定义认证驱动
      */
     protected function guard()
     {
-        return auth()->guard('admin');
+        return auth('admin');
     }
-   /* public function index(){
-
-        if (request()->method() === 'POST'){
-
-            $data = request()->except('_token');
-            if (!is_null($data['username'])){
-                return redirect('admin')->with('success','登陆成功！welcome form this pages');
-            }
-        }else{
-            return view('admin.login.login');
-        }
-    }*/
-
 
 }

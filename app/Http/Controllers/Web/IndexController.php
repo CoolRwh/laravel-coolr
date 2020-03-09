@@ -8,7 +8,6 @@ class IndexController extends BaseController
 
     public function index(){
 
-
         return view('web.index.index');
     }
 }

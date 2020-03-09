@@ -34,5 +34,13 @@ return [
       'client_secret' => env('QQ_SECRET'),
       'redirect'      => env('QQ_REDIRECT_URL'),
     ],
+    'weixin' => [
+      'client_id'     => env('WX_KEY'),
+      'client_secret' => env('WX_SECRET'),
+      'redirect'      => env('WX_REDIRECT_URI'),
+      # 这一行配置非常重要，必须要写成这个地址。
+      //'auth_base_uri' => 'https://open.weixin.qq.com/connect/qrconnect',
+    ],
+
 
 ];

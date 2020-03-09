@@ -2,23 +2,20 @@
 
 namespace App\Http\Controllers\Api;
 
-
-use App\Blog;
+use App\Http\Controllers\Controller;
 use App\User;
 
-class UserController extends AuthController
+class UserController extends Controller
 {
     //
-    public function show()
-    {
 
-        $data = auth('api')->id();
+    public function getUserList(){
 
-        $data = Blog::paginate(10);
-
-        return $data;
-
-
+        $data = [
+          'message'=>'success',
+          'users' =>  User::all(),
+        ];
+        return response()->json($data);
     }
 
 }

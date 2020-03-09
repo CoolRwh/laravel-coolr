@@ -5,13 +5,11 @@ namespace App\Http\Controllers\Web;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class ArticleController extends BaseController
+class WorkController extends Controller
 {
     //
 
-    public function info($id){
-
-
-        return view('web.article.info');
+    public function index(){
+        dd('work');
     }
 }

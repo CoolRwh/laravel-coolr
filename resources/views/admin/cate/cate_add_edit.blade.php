@@ -8,11 +8,16 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link href="/static/admin/css/bootstrap.min14ed.css" rel="stylesheet">
+    <link href="/static/admin/css/font-awesome.min93e3.css" rel="stylesheet">
+    <link href="/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/static/admin/css/animate.min.css" rel="stylesheet">
     <link href="/static/admin/css/style.min862f.css" rel="stylesheet">
 </head>
 
+
 <body class="gray-bg">
     <div class="wrapper wrapper-content animated fadeInRight">
+        @include('admin.layouts._message')
         <div class="row">
             <div class="col-sm-12">
                 <div class="ibox-content forum-container">
@@ -64,7 +69,6 @@
                                         </div>
 
                                     </form>
-
                         </div>
 
                         </div>
@@ -74,6 +78,7 @@
                 </div>
             </div>
         </div>
-
+    <script src="{{@asset('static/admin/js/jquery.min.js')}}"></script>
+    <script src="{{@asset('static/admin/js/bootstrap.min.js')}}"></script>
 </body>
 </html>

@@ -63,6 +63,8 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'auth.jwt' => \Tymon\JWTAuth\Http\Middleware\Authenticate::class,
        'auth.admin' => \App\Http\Middleware\AdminAuth::class,
+        //跨域
+        'cors' => \Barryvdh\Cors\HandleCors::class,
     ];
 
     /**
