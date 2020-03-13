@@ -8,12 +8,12 @@
         </div>
         <div class="photo-wrapper clearfix">
             <div class="photo-wrapper-tip text-center">
-                <a href="http://coolr.top/wp-login.php?redirect_to=https%3A%2F%2Fmoedog.org"
+                <a href=""
                    rel="nofollow"><img class="about-photo" src="/static/web/images/480x480.jpg" alt=""/></a>
             </div>
         </div>
         <div class="textwidget">
-            <p class="text-center"><span style="font-size: 10pt;"> 咦？我是谁？我为什么会在这？<a href="http://coolr.top/about.html">[关于]</a></span></p>
+            <p class="text-center"><span style="font-size: 10pt;"> 咦？我是谁？我为什么会在这？<a href="http://coolr.top">[关于]</a></span></p>
         </div>
     </aside>
 

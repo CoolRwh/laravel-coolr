@@ -7,12 +7,15 @@ use Illuminate\Http\Request;
 
 class ArticleController extends BaseController
 {
-    //
 
-    public function info($id){
-
-
-        
-        return view('web.article.info');
+    /**
+     * @info 文章详情
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function info($id)
+    {
+        $articles = $id;
+        return view('web.article.info',compact('articles'));
     }
 }       

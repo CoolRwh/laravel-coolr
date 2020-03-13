@@ -13,7 +13,7 @@ return [
     'url'   => '#',
     "permission" => "权限标识",
     'next'   => [
-      ['title' => '文章列表',"permission" => "权限标识",'url' => 'admin/cate/2/edit'],
+      ['title' => '文章列表',"permission" => "权限标识",'url' => 'admin/article'],
       ['title' => '栏目列表',"permission" => "权限标识",'url' => 'admin/cate'],
     ],
   ],

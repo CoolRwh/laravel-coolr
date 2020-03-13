@@ -28,7 +28,7 @@
                         </li>
                         <li><a href="http://coolr.top/friends.html"><i class="fa fa-mars"></i> 友链</a></li>
                         <li><a href="http://coolr.top/guestbook.html"><i class="fa fa-pencil"></i> 留言</a></li>
-                        <li><a target="_blank" rel="noopener noreferrer" href="{{route('auth.qq')}}"><i class="fa fa-rocket"></i> login</a></li>
+                        <li><a target="_blank" rel="noopener noreferrer" href="{{route('admin.login')}}"><i class="fa fa-rocket"></i> login</a></li>
                     </ul>
                 </nav>
             </div>

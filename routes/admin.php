@@ -33,6 +33,8 @@ Route::group(['prefix' => '/admin', 'namespace' => 'Admin','middleware'=>['auth.
     Route::resource('rule','RuleController',['as'  =>  'admin']);
     //角色
     Route::resource('role','RoleController',['as'  =>  'admin']);
+    //文章
+    Route::resource('article','ArticleController',['as'  =>  'admin']);
     //规则
     Route::resource('permission','PermissionController',['as'  =>  'admin']);
 

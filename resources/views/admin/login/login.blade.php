@@ -1,108 +1,176 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{{--    <link rel="stylesheet" href="{{@asset('static/admin/css/theme.min.css')}}" id="stylesheetLight">--}}
+    <link href="{{@asset('static/admin/css/font-awesome.min93e3.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{@asset('static/admin/css/theme-dark.min.css')}}" id="stylesheetDark">
 
-    <title>十清凉Blog - 登录</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link href="/static/admin/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/static/admin/css/font-awesome.min93e3.css" rel="stylesheet">
-    <link href="/static/admin/css/animate.min.css" rel="stylesheet">
-    <link href="/static/admin/css/style.min.css" rel="stylesheet">
-    <link href="/static/admin/css/login.min.css" rel="stylesheet">
-    <!-- Sweet Alert -->
-    <link href="/static/admin/css/plugins/sweetalert/sweetalert.css" rel="stylesheet">
-    <!--[if lt IE 9]>
-    <meta http-equiv="refresh" content="0;ie.html" />
-    <![endif]-->
-    <script>
-        if(window.top!==window.self){window.top.location=window.location};
-    </script>
 
+
+
+    <title>十清凉-登陆</title>
 </head>
 
-<body class="signin" style="color: #000000">
-<div class="signinpanel">
-    <div class="row">
-        <div class="col-sm-7">
-            <div class="signin-info">
-                <div class="logopanel m-b">
-                    <h1>[ 十清凉！ ]</h1>
-                </div>
-                <div class="m-b"></div>
-                <h4>欢迎来到 <strong>十清凉！</strong></h4>
-                <ul class="m-b">
-                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 开源</li>
-                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 分享</li>
-                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 成长</li>
-                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> 小破站</li>
-                    <li><i class="fa fa-arrow-circle-o-right m-r-xs"></i> QAQ！</li>
-                    <li>
-                        <!--  <strong><p>——————— 其他方式登录 ———————</p></strong>-->
-                        <strong><p>—————————————————————</p></strong>
-                    </li>
-                    <li  style="font-size: 15px;" >其他登录方式：
-                        <a href="{{route('auth.qq')}}" style=" color: white; margin-left: 10px;" >
-                            <i class="fa fa-qq "> QQ</i>
-                        </a>
+<style>
+    .avatar-title{
+        border-style:solid;
+        border-width: 2px
+    }
+    .avatar-title:hover{
+        border-color:#2c7be4;
+    }
+</style>
+<body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
 
-                        <a href="/apis/some/index.html" style=" color: white; margin-left: 10px;" >
-                            <i class="fa fa-github "> Github</i>
-                        </a>
-                        <a href="/login/gitee.html"  style=" color: white; margin-left: 10px;" >
-                            <img width="25px" src="/static/admin/img/gitee.png">码云
-                        </a>
-                        <a href="/login/weibo.html" style=" color: white; margin-left: 10px;" >
-                            <i class="fa fa-weibo "> 微博</i>
-                        </a>
-                    </li>
-                    <p></p>
-                    <li><strong>没有账号？ <a href="/admin/login/register.html" style="color: white">立即注册&raquo;</a></strong></li>
-                </ul>
 
+
+<!-- CONTENT
+================================================== -->
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col-12 col-md-6 offset-xl-2 offset-md-1 order-md-2 mb-5 mb-md-0">
+
+            <!-- Image -->
+            <div class="text-center">
+                <img src="{{@asset('static/admin/img/happiness.svg')}}" alt="..." class="img-fluid">
             </div>
+
         </div>
-        <div class="col-sm-5">
-            @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-                @if(session()->has($msg))
-                    <div class="alert alert-{{$msg}} alert-dismissable" style="text-align: center;">
-                        <button aria-hidden="true" data-dismiss="alert" class="close" type="button">x</button>
-                        <b> {{ session()->get($msg) }}</b>
+        <div class="col-12 col-md-5 col-xl-4 order-md-1 my-5">
+
+            <!-- Heading -->
+            <h1 class="display-4 text-center mb-3">
+                Sign in to Coolr
+            </h1>
+
+            <!-- Subheading -->
+            <p class="text-muted text-center mb-5">
+                Free access to my dashboard.<br >
+                Don't have an account yet? <a href="#">Sign up</a>.
+            </p>
+
+            <!-- Form -->
+            <form action="{{@route('admin.login')}}" method="post">
+
+                @csrf
+                <!-- Email address -->
+
+                    @if ($errors->any())
+                        @foreach ($errors->all() as $error)
+                          <li style="color: red">{{ $error }}</li>
+                        @endforeach
+                    @endif
+                <div class="form-group">
+
+                    <!-- Label -->
+                    <label>Username or email address</label>
+
+                    <!-- Input -->
+                    <input type="text" name="username" class="form-control" placeholder="Username or email" value="{{old('username')}}">
+
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+
+                    <div class="row">
+                        <div class="col">
+
+                            <!-- Label -->
+                            <label>Password</label>
+
+                        </div>
+                        <div class="col-auto">
+
+                            <!-- Help text -->
+                            <a href="#" class="form-text small text-muted">
+                                Forgot password?
+                            </a>
+
+                        </div>
+                    </div> <!-- / .row -->
+
+                    <!-- Input group -->
+                    <div class="input-group input-group-merge">
+
+                        <!-- Input -->
+                        <input id="password" type="password" name="password" class="form-control form-control-appended" placeholder="Enter your password" value="123456">
+
+                        <!-- Icon -->
+                        <div class="input-group-append">
+                  <span class="input-group-text eye">
+                    <i id="see" class="fa fa-eye-slash"></i>
+
+                  </span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Submit -->
+                <button class="btn btn-lg btn-block btn-primary mb-3">
+                    Sign in
+                </button>
+
+
+                <!-- Link -->
+         {{--       <div class="text-center">
+                    <small class="text-muted text-center">
+                        Don't have an account yet? <a href="#">Sign up</a>.
+                    </small>
+                </div>--}}
+
+                    {{--第三方登陆--}}
+                    <div class="form-group" >
+                        <div class="row">
+                            <div class="col" style="font-size: 15px;">
+                                <label>其他方式登陆 QAQ！</label>
+                            </div>
+                        </div>
+
+                        <div class="avatar avatar-sm" >
+                            <a href="{{@route('auth.qq')}}" >
+                                <span class="avatar-title rounded-circle" style=""><i class="fa fa-qq"></i></span>
+                            </a>
+                        </div>
+                        <div class="avatar avatar-sm" >
+                            <a href="#" >
+                                <span class="avatar-title rounded-circle" style=""><i class="fa fa-weibo"></i></span>
+                            </a>
+                        </div>
+                        <div class="avatar avatar-sm" >
+                            <a href="#" >
+                                <span class="avatar-title rounded-circle" style=""><i class="fa fa-github"></i></span>
+                            </a>
+                        </div>
                     </div>
 
-                @endif
-            @endforeach
-            <form method="post" id="login" action="{{route('admin.login')}}">
-                <h4 class="no-margins">登录：</h4>
-                <p class="m-t-md">登录到Blog后台</p>
-                @csrf
-                <input type="text" class="form-control uname" name="username" value="小小" placeholder="用户名" />
-                <input type="password" class="form-control pword m-b" name="password" value="123456" placeholder="密码" />
-                <a href="#" style="color: white">忘记密码了？</a>
-                <a href="#" style="color: white;float: right">立即注册&raquo;</a>
-                <button type="submit" class="btn btn-success btn-block">登录</button>
             </form>
-        </div>
-    </div>
 
-    <div class="signup-footer">
-        <div class="pull-left">
-            &copy; 2019-2020
         </div>
-    </div>
-</div>
-<script src="/static/admin/js/jquery.min.js"></script>
-<script  src="/static/admin/js/plugins/layer/layer.min.js"></script>
-<!--<script src="/static/admin/js/content.min.js"></script>-->
-<script src="/static/admin/js/plugins/sweetalert/sweetalert.min.js"></script>
+    </div> <!-- / .row -->
+</div> <!-- / .container -->
+
+<!-- JAVASCRIPT
+================================================== -->
+<!-- Libs JS -->
+<script src="{{@asset('static/admin/js/jquery.min.js')}}"></script>
 <script>
+
+    $('.eye').click(function () {
+        let password = document.getElementById("password");
+        let see = document.getElementById("see");
+        console.log("修改状态！");
+        if (password.type == "password") {
+            password.type = "text";
+            see.className = "fa fa-eye"
+        }else{
+            password.type = "password";
+            see.className = "fa fa-eye-slash"
+        }
+    })
 </script>
-
-
 </body>
 </html>

@@ -24,8 +24,7 @@
                     <div >
 
                         @if(isset($cates->id))
-                            <i  class="fa fa-user"></i>
-                            <h3> 修改栏目--{{$cates->cate_name}}</h3>
+                            <h3>修改栏目：【{{$cates->cate_name}}】</h3>
                             @else
                             <h3> 添加栏目</h3>
                             @endif
