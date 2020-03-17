@@ -131,17 +131,18 @@
                         </div>
 
                         <div class="avatar avatar-sm" >
-                            <a href="{{@route('auth.qq')}}" >
+{{--                            <a href="{{@route('auth.qq')}}" >--}}
+                            <a href="http://coolr.top/auth/qq" >
                                 <span class="avatar-title rounded-circle" style=""><i class="fa fa-qq"></i></span>
                             </a>
                         </div>
                         <div class="avatar avatar-sm" >
-                            <a href="#" >
+                            <a href="{{@route('auth.weiBo')}}" >
                                 <span class="avatar-title rounded-circle" style=""><i class="fa fa-weibo"></i></span>
                             </a>
                         </div>
                         <div class="avatar avatar-sm" >
-                            <a href="#" >
+                            <a href="{{@route('auth.github')}}" >
                                 <span class="avatar-title rounded-circle" style=""><i class="fa fa-github"></i></span>
                             </a>
                         </div>

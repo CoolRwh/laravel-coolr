@@ -8,8 +8,11 @@
         </div>
         <div class="photo-wrapper clearfix">
             <div class="photo-wrapper-tip text-center">
-                <a href=""
-                   rel="nofollow"><img class="about-photo" src="/static/web/images/480x480.jpg" alt=""/></a>
+                @if(session('webUserInfo.avatar') != null)
+                <a href="#" rel="nofollow"><img class="about-photo" src="{{@session('webUserInfo.avatar')}}" alt="dddddsfsdf史蒂夫"/></a>
+                    @else
+                    <a href="#" rel="nofollow"><img class="about-photo" src="/static/web/images/480x480.jpg" alt=""/></a>
+                @endif
             </div>
         </div>
         <div class="textwidget">
@@ -21,8 +24,8 @@
 
     {{--  头像开始--}}
 
-    <aside id="kratos_comments-2" class="widget widget_kratos_comments clearfix"><h4
-                class="widget-title">最近评论</h4>
+{{--
+    <aside id="kratos_comments-2" class="widget widget_kratos_comments clearfix"><h4 class="widget-title">最近评论</h4>
         <div class="recentcomments">
             <li class="comment-listitem">
                 <div class="comment-user"><span class="comment-avatar"><img alt=''
@@ -96,6 +99,7 @@
             </li>
         </div>
     </aside>
+--}}
 
 
     <aside class="widget widget_kratos_poststab">
@@ -232,42 +236,24 @@
     </aside>
 
     {{--随机10个--}}
-    {{-- <aside id="linkcat-35" class="widget widget_links clearfix"><h4 class="widget-title">
-             绒布球们（随机10个）</h4>
+     <aside id="linkcat-35" class="widget widget_links clearfix">
+         <h4 class="widget-title">标 签</h4>
          <ul class='xoxo blogroll'>
-             <li><a href="https://www.justhx.com" title="路上雨水会不会融化积雪 蝉鸣是否会打破寂寥"
-                    target="_blank"><img src="/static/web/picture/hxco.png" alt="惶心"
-                                         title="路上雨水会不会融化积雪 蝉鸣是否会打破寂寥"/> 惶心</a></li>
-             <li><a href="https://www.qinkei.com" title="乐于分享|发型图片|发型设计" target="_blank"><img
-                             src="/static/web/picture/qinke.jpg" alt="清秋暖冬"
-                             title="乐于分享|发型图片|发型设计"/> 清秋暖冬</a></li>
-             <li><a href="https://xeonphi.cn/" title="小孩子才分对错 成年人只看利弊" target="_blank"><img
-                             src="/static/web/picture/hcreak.jpg" alt="Hcreak"
-                             title="小孩子才分对错 成年人只看利弊"/> Hcreak</a></li>
-             <li><a href="https://moekira.com" title="一个清新的二次元萌博客~" target="_blank"><img
-                             src="/static/web/picture/kobbv.jpg" alt="Kira"
-                             title="一个清新的二次元萌博客~"/> Kira</a></li>
-             <li><a href="https://i.a632079.me/" title="我的御用RBQ~" target="_blank"><img
-                             src="/static/web/picture/a632079.jpg" alt="a632079"
-                             title="我的御用RBQ~"/> a632079</a></li>
-             <li><a href="http://myloveru.cn" title="在梦想的道路上逐步前进" target="_blank"><img
-                             src="/static/web/picture/myloveru.jpg" alt="北海"
-                             title="在梦想的道路上逐步前进"/> 北海</a></li>
-             <li><a href="https://haremu.com/" title="一个中二病宅的日常博客..." target="_blank"><img
-                             src="/static/web/picture/haremu.jpg" alt="后宫学长"
-                             title="一个中二病宅的日常博客..."/> 后宫学长</a></li>
-             <li><a href="https://daidr.me" title="在迷失中寻找自我" target="_blank"><img
-                             src="/static/web/picture/daidr.png" alt="DaiDR" title="在迷失中寻找自我"/>
-                     DaiDR</a></li>
-             <li><a href="http://ctrler.cn/" target="_blank"><img
-                             src="/static/web/picture/ctrler.png" alt="Ctrler"/> Ctrler</a>
-             </li>
-             <li><a href="https://dctewi.com" title="一个蒟蒻的博客" target="_blank"><img
-                             src="/static/web/picture/dctewi.png" alt="冻葱Tewi"
-                             title="一个蒟蒻的博客"/> 冻葱Tewi</a></li>
 
+             <li>
+                     <i class="fa fa-tags"></i>
+                     <a href="#" rel="tag">php</a>
+             </li>
+             <li>
+                     <i class="fa fa-tags"></i>
+                     <a href="#" rel="tag">mysql</a>
+             </li>
+             <li>
+                 <i class="fa fa-tags"></i>
+                 <a href="#" rel="tag">Laravel</a>
+             </li>
          </ul>
-     </aside>--}}
+     </aside>
 
 
 </div>

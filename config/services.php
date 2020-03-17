@@ -41,6 +41,16 @@ return [
       # 这一行配置非常重要，必须要写成这个地址。
       //'auth_base_uri' => 'https://open.weixin.qq.com/connect/qrconnect',
     ],
+    'weibo'  => [
+      'client_id'     => env('WEIBO_KEY'),
+      'client_secret' => env('WEIBO_SECRET'),
+      'redirect'      => env('WEIBO_REDIRECT_URL'),
+    ],
+    'github'  => [
+      'client_id'     => env('GITHUB_KEY'),
+      'client_secret' => env('GITHUB_SECRET'),
+      'redirect'      => env('GITHUB_REDIRECT_URL'),
+    ],
 
 
 ];

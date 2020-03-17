@@ -14,11 +14,12 @@
 
                     <p class="kratos-social-icons"></p>
                     <p> © 2019 <a href="http://coolr.top">十清凉</a>. All Rights Reserved. | 已在风雨中度过
-                        <span id="span_dt_dt">Loading...</span><br>Theme <a href="http://coolr.top/787.html" rel="nofollow">Kratos</a> Made by
+                        <span id="span_dt_dt">Loading...</span>
+                       {{-- <br>Theme <a href="http://coolr.top/787.html" rel="nofollow">Kratos</a> Made by
                         <a href="https://www.vtrois.com" target="_blank" rel="nofollow">Vtrois</a>
                         Modified by
-                        <a href="http://coolr.top" rel="nofollow">Moedog</a> | <a href="http://coolr.top/sitemap.html" target="_blank">Sitemap</a>
-                    <br><a>备案：蜀ICP备19040948号-1</a>
+                        <a href="http://coolr.top" rel="nofollow">Moedog</a> | <a href="http://coolr.top/sitemap.html" target="_blank">Sitemap</a>--}}
+                    <br><a>蜀ICP备19040948号-1</a>
                     </p>
                 </div>
             </div>

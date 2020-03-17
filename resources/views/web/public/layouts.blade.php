@@ -1,33 +1,3 @@
-{{--<!DOCTYPE HTML>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <title>@yield('title','十清凉！- 首页')</title>
-
-    <link rel='stylesheet' id='fontawe-css' href='/static/web/css/font-awesome.min.css' type='text/css' media='all'/>
-    <link rel='stylesheet' id='kratos-css' href='/static/web/css/kratos.min.css' type='text/css' media='all'/>
-    <script type='text/javascript' src='/static/web/js/jquery.min.js'></script>
-    <style>#offcanvas-menu {
-            background: rgba(42, 42, 42, .9)
-        }
-
-        .affix {
-            /*top: 61px*/
-            top: 10px
-        }
-
-        .kratos-cover.kratos-cover_2 {
-            /*background-image: url(/static/web/images/site_head.png)*/
-            background-image: url(https://i.loli.net/2020/02/29/PToaxqNRjwpCcFG.png)
-        }
-
-        @media (max-width: 768px) {
-            .kratos-cover.kratos-cover_2 {
-                background-image: url(http://coolr.top/images/w1.png)
-            }
-        }    </style>
-</head>--}}
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Cache-Control" content="no-transform">
@@ -41,13 +11,13 @@
 
     <link rel='stylesheet' id='fontawe-css'  href='{{asset('static/web/css/font-awesome.min.css')}}' type='text/css' media='all' />
     <link rel='stylesheet' id='kratos-css'  href='{{asset('static/web/css/kratos.min.css')}}' type='text/css' media='all' />
-    <script type='text/javascript' src='{{asset('static/web/js/jquery.min.js')}}'></script>
+{{--    <link rel='stylesheet' id='kratos-css'  href='{{asset('static/web/css/lo.css')}}' type='text/css' media='all' />--}}
     <style>#offcanvas-menu{background:rgba(42,42,42,.9)}
         .affix{top:61px}
-        .kratos-cover.kratos-cover_2{   background-image: url(https://i.loli.net/2020/02/29/PToaxqNRjwpCcFG.png)}
+        .kratos-cover.kratos-cover_2{   background-image: url({{@asset('static/web/images/wallhaven-mp7dkm.jpg')}})}
         @media(max-width:768px){
             .kratos-cover.kratos-cover_2
-            {  background-image: url(https://i.loli.net/2020/02/29/PToaxqNRjwpCcFG.png)}}
+            {  background-image: url({{@asset('static/web/images/wallhaven-mp7dkm.jpg')}})}}
     </style>
 </head>
 <body>
@@ -74,26 +44,24 @@
     </div>
 </div>
 
+<script type='text/javascript' src='{{@asset('static/web/js/jquery.min.js')}}'></script>
+<script type='text/javascript' src='{{@asset('static/web/js/kratos.js')}}'></script>
+{{--<script type='text/javascript' src='{{@asset('static/web/js/theme.min.js')}}'></script>--}}
 
-<script type='text/javascript' src='{{@asset('/static/web/js/theme.min.js')}}'></script>
-<script type='text/javascript' src='{{@asset('/static/web/js/kratos.js')}}'></script>
-<script type='text/javascript' src='{{@asset('/static/web/js/pjax.js')}}'></script>
-<script type='text/javascript' src='{{@asset('/static/web/js/live2d.js')}}'></script>
-<script type='text/javascript' src='{{@asset('/static/web/js/waifu-tips.js')}}'></script>
 <script type='text/javascript'>
     /* <![CDATA[ */
     var xb = {
-        "thome": "https:\/\/moedog.org\/wp-content\/themes\/Kratos-alpha",
-        "ctime": "01\/25\/2017 15:25:00",
-        "alipay": "https:\/\/cdn.jsdelivr.net\/gh\/xb2016\/kratos-pjax@0.4.0\/static\/images\/alipayqr.png",
-        "wechat": "https:\/\/cdn.jsdelivr.net\/gh\/xb2016\/kratos-pjax@0.4.0\/static\/images\/wechatpayqr.png",
-        "copy": "",
-        "ajax_url": "https:\/\/moedog.org\/wp-admin\/admin-ajax.php",
-        "order": "asc",
-        "owo": "https:\/\/cdn.jsdelivr.net\/gh\/xb2016\/kratos-pjax@0.4.1",
-        "site_sh": "61"
+        //"thome": "https:\/\/moedog.org\/wp-content\/themes\/Kratos-alpha",
+        "ctime": "10\/10\/2019 10:10:00",
+        // "copy": "",
+        // "ajax_url": "https:\/\/moedog.org\/wp-admin\/admin-ajax.php",
+        // "order": "asc",
+        // "owo": "https:\/\/cdn.jsdelivr.net\/gh\/xb2016\/kratos-pjax@0.4.1",
+        // "site_sh": "61"
     };
     /* ]]> */
 </script>
+
+
 </body>
 </html>

@@ -9,7 +9,7 @@
 @endsection
 
 @section('desc')
-    A little white programmer in Chengdu
+    A developing phper
 @endsection
 
 

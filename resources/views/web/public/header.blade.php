@@ -14,7 +14,7 @@
                                     @endforeach
                             </ul>
                         </li>
-                        <li><a><i class="fa fa-dashboard"></i> 资料</a>
+                   {{--     <li><a><i class="fa fa-dashboard"></i> 资料</a>
                             <ul class="sub-menu">
                                 <li><a href="http://coolr.top/wp-login.php?action=register">注册</a></li>
                                 <li>
@@ -25,8 +25,8 @@
                                 <li><a target="_blank" rel="noopener noreferrer"
                                        href="https://status.moedog.org/">状态</a></li>
                             </ul>
-                        </li>
-                        <li><a href="http://coolr.top/friends.html"><i class="fa fa-mars"></i> 友链</a></li>
+                        </li>--}}
+                        {{--<li><a href="http://coolr.top/friends.html"><i class="fa fa-mars"></i> 友链</a></li>--}}
                         <li><a href="http://coolr.top/guestbook.html"><i class="fa fa-pencil"></i> 留言</a></li>
                         <li><a target="_blank" rel="noopener noreferrer" href="{{route('admin.login')}}"><i class="fa fa-rocket"></i> login</a></li>
                     </ul>
