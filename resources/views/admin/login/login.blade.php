@@ -78,8 +78,6 @@
                             </div>
 
                         @endif
-
-
                     @endforeach
 
 

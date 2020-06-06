@@ -2,226 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3d96d36a-d7f0-41d5-97d1-ebba9fbce87d" name="Default Changelist" comment="修改后台登录逻辑">
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/Article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Model/ArticleTag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/factories/ArticleFactory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_24_125817_create_articles_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_24_132800_create_tags_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_03_25_134625_create_article_tags_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/seeds/ArticleSeeder.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/plugins/ueditor/php/action_crawler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/plugins/ueditor/php/action_list.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/static/admin/plugins/ueditor/php/action_upload.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/PermissionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/ArticleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/ArticleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/BaseController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/BaseController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/IndexController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Web/IndexController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/VerifyCsrfToken.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/menu.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/menu.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/demo/webuploader-demo.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/blueimp/css/blueimp-gallery.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/blueimp/img/error.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/blueimp/img/error.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/blueimp/img/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/blueimp/img/play-pause.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/blueimp/img/play-pause.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/blueimp/img/video-play.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/blueimp/img/video-play.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/bootstrap-table/bootstrap-table.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/chosen/chosen-sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/chosen/chosen-sprite@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/chosen/chosen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/clockpicker/clockpicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/codemirror/ambiance.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/codemirror/codemirror.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/colorpicker/img/bootstrap-colorpicker/alpha-horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/colorpicker/img/bootstrap-colorpicker/alpha.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/colorpicker/img/bootstrap-colorpicker/hue-horizontal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/colorpicker/img/bootstrap-colorpicker/hue.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/colorpicker/img/bootstrap-colorpicker/saturation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/cropper/cropper.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/dataTables/dataTables.bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/datapicker/datepicker3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/dropzone/basic.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/dropzone/dropzone.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/footable/fonts/footable.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/footable/fonts/footable.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/footable/fonts/footable.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/footable/fonts/footable.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/footable/fonts/footabled41d.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/footable/footable.core.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/fullcalendar/fullcalendar.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/fullcalendar/fullcalendar.print.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/iCheck/custom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/iCheck/green.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/iCheck/green@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/images/sort_asc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/images/sort_desc.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/images/sprite-skin-flat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/images/spritemap.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/images/spritemap@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/ionRangeSlider/ion.rangeSlider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/jasny/jasny-bootstrap.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/jqgrid/ui.jqgridffe4.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/jsTree/style.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/markdown/bootstrap-markdown.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/morris/morris-0.4.3.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/nouslider/jquery.nouislider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/plyr/plyr.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/plyr/sprite.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/simditor/simditor.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/steps/jquery.steps.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/summernote/summernote-bs3.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/summernote/summernote.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/sweetalert/sweetalert.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/switchery/switchery.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/toastr/toastr.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/treeview/bootstrap-treeview.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/css/plugins/webuploader/webuploader.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/bootstrap-table-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/echarts-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/flot-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/form-advanced-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/form-validate-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/layer-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/morris-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/peity-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/rickshaw-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/sparkline-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/treeview-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/demo/webuploader-demo.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/beautifyhtml/beautifyhtml.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/blueimp/jquery.blueimp-gallery.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/bootstrap-table/bootstrap-table.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/chartJs/Chart.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/chosen/chosen.jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/clockpicker/clockpicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/codemirror/codemirror.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/codemirror/mode/javascript/javascript.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/colorpicker/bootstrap-colorpicker.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/cropper/cropper.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/dataTables/dataTables.bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/dataTables/jquery.dataTables.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/datapicker/bootstrap-datepicker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/diff_match_patch/diff_match_patch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/dropzone/dropzone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/easypiechart/jquery.easypiechart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/echarts/echarts-all.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fancybox/blank.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fancybox/fancybox_loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fancybox/fancybox_loading@2x.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fancybox/fancybox_overlay.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fancybox/fancybox_sprite.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fancybox/fancybox_sprite@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fancybox/jquery.fancybox.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fancybox/jquery.fancybox.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/flot/curvedLines.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/flot/jquery.flot.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/flot/jquery.flot.pie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/flot/jquery.flot.resize.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/flot/jquery.flot.spline.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/flot/jquery.flot.symbol.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/flot/jquery.flot.tooltip.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/footable/footable.all.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/fullcalendar/fullcalendar.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/gritter/images/gritter-light.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/gritter/images/gritter.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/gritter/images/ie-spacer.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/gritter/jquery.gritter.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/gritter/jquery.gritter.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/iCheck/icheck.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jasny/jasny-bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jeditable/jquery.jeditable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jqgrid/i18n/grid.locale-cnffe4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jqgrid/jquery.jqGrid.minffe4.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jquery-ui/jquery-ui.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jsKnob/jquery.knob.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jsTree/jstree.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/extend/layer.ext.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/demo.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/layDate官网.url" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/laydate/laydate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/laydate/need/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/laydate/skins/dahong/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/laydate/skins/dahong/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/laydate/skins/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/laydate/skins/default/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/laydate/skins/molv/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/laydate/skins/molv/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate-v1.1/更新日志.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate/laydate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate/need/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate/skins/dahong/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate/skins/dahong/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate/skins/default/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate/skins/default/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate/skins/molv/icon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/laydate/skins/molv/laydate.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/layer.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/layim/layim.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/layim/layim.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/layim/loading.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/skin/layer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/skin/layer.ext.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/layer/skin/moon/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/markdown/bootstrap-markdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/markdown/bootstrap-markdown.zh.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/markdown/markdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/markdown/to-markdown.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/metisMenu/jquery.metisMenu.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/morris/morris.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/morris/raphael-2.1.0.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/nestable/jquery.nestable.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/nouslider/jquery.nouislider.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/pace/pace.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/peity/jquery.peity.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/plyr/plyr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/prettyfile/bootstrap-prettyfile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/rickshaw/rickshaw.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/rickshaw/vendor/d3.v3.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/simditor/hotkeys.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/simditor/module.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/simditor/simditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/simditor/uploader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/slimscroll/jquery.slimscroll.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/sparkline/jquery.sparkline.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/staps/jquery.steps.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/suggest/bootstrap-suggest.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/summernote/summernote-zh-CN.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/summernote/summernote.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/sweetalert/sweetalert.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/switchery/switchery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/toastr/toastr.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/treeview/bootstrap-treeview.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/validate/jquery.validate.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/validate/messages_zh.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/webuploader/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/js/plugins/webuploader/webuploader.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/plugins/fullavatareditor/scripts/fullAvatarEditor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/plugins/fullavatareditor/scripts/jQuery.Cookie.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/plugins/fullavatareditor/scripts/swfobject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/static/admin/plugins/fullavatareditor/scripts/test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/article/article_add_edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/article/article_add_edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/article/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/article/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/cate/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/cate/list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/admin/login/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/login/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/componets/admin_public_list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/componets/admin_public_list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/article/info.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/article/info.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/category/list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/category/list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/index/index.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/public/layouts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/public/layouts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/web/public/menu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/web/public/menu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -325,20 +117,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/admin/login/login.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="84" selection-start-line="84" selection-end-line="84" />
+            <state relative-caret-position="65">
+              <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
             </state>
           </provider>
         </entry>
@@ -542,8 +325,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="99" />
-    <option name="y" value="6" />
+    <option name="x" value="74" />
+    <option name="y" value="37" />
     <option name="width" value="1780" />
     <option name="height" value="1047" />
   </component>
@@ -762,7 +545,7 @@
       <workItem from="1590125987519" duration="1768000" />
       <workItem from="1590644639664" duration="5759000" />
       <workItem from="1591418534792" duration="4398000" />
-      <workItem from="1591425242266" duration="1870000" />
+      <workItem from="1591425242266" duration="2477000" />
     </task>
     <task id="LOCAL-00001" summary="文章详情">
       <created>1583722541582</created>
@@ -785,11 +568,18 @@
       <option name="project" value="LOCAL" />
       <updated>1584448247280</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="修改后台登录逻辑">
+      <created>1591427142858</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591427142858</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="493104000" />
+    <option name="totallyTimeSpent" value="493711000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,7 +591,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="99" y="6" width="1780" height="1047" extended-state="0" />
+    <frame x="74" y="37" width="1780" height="1047" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" type="SLIDING" weight="0.45830312" />
       <window_info id="Structure" order="1" side_tool="true" type="SLIDING" weight="0.2495637" />
@@ -815,7 +605,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" type="SLIDING" weight="0.3293011" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" type="SLIDING" visible="true" weight="0.40586245" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" type="SLIDING" visible="true" weight="0.777903" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Inspection Results" order="10" weight="0.3298969" />
       <window_info anchor="bottom" auto_hide="true" x="215" y="368" width="1439" height="255" id="Terminal" order="11" type="SLIDING" weight="0.3392857" />
@@ -881,7 +671,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="修改后台登录逻辑" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/admin/config/blade.html" />
     <entry file="file://$PROJECT_DIR$/resources/views/admin/config/index.blode.php" />
     <entry file="file://$PROJECT_DIR$/public/robots.txt">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1220,10 +1009,18 @@
     <entry file="file://$PROJECT_DIR$/resources/views/web/public/header.blade.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/admin/login/login.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="84" selection-start-line="84" selection-end-line="84" />
+        <state relative-caret-position="65">
+          <caret line="108" lean-forward="true" selection-start-line="108" selection-end-line="108" />
         </state>
       </provider>
     </entry>
