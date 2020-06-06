@@ -48,6 +48,12 @@ Route::group(
     }
 );
 
-Route::get('admin/login', 'Admin\LoginController@showLoginForm')->name('admin.login');
-Route::post('admin/login', 'Admin\LoginController@login');
-Route::get('admin/logout', 'Admin\LoginController@logout')->name('admin.logout');
+
+Route::group([
+    'prefix' => 'admin',
+    'namespace' => 'Admin',
+],function (){
+    Route::get('login', 'LoginController@showLoginForm')->name('admin.login');
+    Route::post('login', 'LoginController@login');
+    Route::get('logout', 'LoginController@logout')->name('admin.logout');
+});
