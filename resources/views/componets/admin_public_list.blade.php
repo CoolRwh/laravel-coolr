@@ -11,10 +11,10 @@
     <meta name="description" content="">
     <link href="/static/admin/css/bootstrap.min14ed.css" rel="stylesheet">
     <link href="/static/admin/css/font-awesome.min93e3.css" rel="stylesheet">
-    <link href="/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
     <link href="/static/admin/css/animate.min.css" rel="stylesheet">
     <link href="/static/admin/css/style.min862f.css" rel="stylesheet">
     <link href="{{asset('static/admin/layui/css/layui.css')}}" rel="stylesheet">
+    <link href="{{@asset('static/web/css/mdui.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -50,9 +50,6 @@
 
 <script src="{{@asset('static/admin/js/jquery.min.js')}}"></script>
 <script src="{{@asset('static/admin/js/bootstrap.min.js')}}"></script>
-    <script  src="{{ asset('static/admin/js/plugins/iCheck/icheck.min.js') }}"></script>
-<script src="{{@asset('static/admin/js/plugins/metisMenu/jquery.metisMenu.js')}}"></script>
-<script src="{{@asset('static/admin/js/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
 <script  src="{{ asset('static/admin/layui/layui.all.js') }}"></script>
 
 <script>

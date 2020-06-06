@@ -8,13 +8,14 @@
 
 return [
   [
-    'title' => '文章管理',
+    'title' => '内容管理',
     'icon'  => 'fa fa fa-bar-chart-o',
     'url'   => '#',
     "permission" => "权限标识",
     'next'   => [
-      ['title' => '文章列表',"permission" => "权限标识",'url' => 'admin/article'],
-      ['title' => '栏目列表',"permission" => "权限标识",'url' => 'admin/cate'],
+      ['title' => '文章管理',"permission" => "权限标识",'url' => 'admin/article'],
+      ['title' => '分类管理',"permission" => "权限标识",'url' => 'admin/cate'],
+      ['title' => '标签管理',"permission" => "权限标识",'url' => 'admin/tag'],
     ],
   ],
   [

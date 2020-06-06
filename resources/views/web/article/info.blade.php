@@ -1,54 +1,51 @@
 @extends('web.public.layouts')
 
 
-@section('title')
-    十清凉!-articleInfo
-@endsection
+@section('title')十清凉!-{{$articles->title}}@endsection
 
-@section('article_title')
-    贺 建站一千日整
-    @endsection
+@section('article_title'){{$articles->title}}@endsection
 
 @section('desc')
-    贺 建站一千日整
+{{--    {{$articles->title}}--}}
     @endsection
 
 @section('content')
     <article>
         <div class="kratos-hentry kratos-post-inner clearfix">
             <header class="kratos-entry-header">
-                <h1 class="kratos-entry-title text-center">贺 建站一千日整</h1>
+                <h1 class="kratos-entry-title text-center">{{$articles->title}}</h1>
                 <div class="kratos-post-meta text-center">
                     <span>
-                    <i class="fa fa-calendar"></i> 2019-10-22 <i class="fa fa-commenting-o"></i> 78条评论  <i class="fa fa-eye"></i> 8.37k次阅读
+                    <i class="fa fa-calendar"></i> 2020-2-22 <i class="fa fa-commenting-o"></i> 78条评论  <i class="fa fa-eye"></i> 8.37k次阅读
                     <span class="hd">
-                    <i class="fa fa-thumbs-o-up"></i> 39人点赞 <i class="fa fa-user"></i> 小白-白  </span>
+                    <i class="fa fa-thumbs-o-up"></i> 39人点赞 <i class="fa fa-user"></i> 十清凉  </span>
                     </span>
                 </div>
             </header>
 
 
-            <div class="kratos-post-content">
+          {{--  <div class="kratos-post-content">
                 <div class="panel panel-info">
                     <div class="panel-heading">
                         <h3 class="panel-title">前言</h3>
                     </div>
                     <div class="panel-body">哇，不知不觉已经苟活了 1000 天了，可喜可贺。其实是想到 1024 日再发的，但是已经咕太久了。久违的发文，来说说最近干了点什么。</div>
-                </div>
-                <p>想要什么福利？打扰了，没有。但是欢迎给我打钱。</p>
-                <h2 class="title-h2">这个是分隔符</h2>
-                <p>首先这个月，我变成了一个 DD，开始看各种 VTuber 了，啊！老婆们真可爱啊！先定个小目标，把哔站直播间的牌子都刷到十级。 <img
-                            src="https://cdn.jsdelivr.net/gh/xb2016/kratos-pjax@0.4.3/static/images/smilies/huaji9.png"
-                            alt=":huaji9:" class="wp-smiley" style="height: 1em; max-height: 1em;" layer-index="0"></p>
-                <h2 class="title-h2">这个是分隔符</h2>
-                <p>然后抽了点时间做了下 Office Tool Plus 的英文翻译，工地英语，我太难了。也欢迎大佬们去 <a href="https://github.com/YerongAI/Office-Tool"
-                                                                          rel="noopener noreferrer" target="_blank">Github</a>
-                    改进翻译。</p>
-                <h2 class="title-h2">这个是分隔符</h2>
+                </div>--}}
 
-            <div class="kratos-copyright text-center clearfix">
-                <h5>本作品采用 <a rel="license nofollow" target="_blank" href="http://creativecommons.org/licenses/by-sa/4.0/">知识共享署名-相同方式共享 4.0 国际许可协议</a> 进行许可</h5>
-            </div>
+{{--                内容--}}
+                <div>
+                    <?php echo htmlspecialchars_decode($articles->content)?>
+                    <div>
+
+
+{{--                内容结束--}}
+
+
+
+
+                @if(!isset($articles))
+                    <h2>没有</h2>
+                    @endif
 
 
             <footer class="kratos-entry-footer clearfix">
@@ -72,16 +69,20 @@
 
         <nav class="navigation post-navigation clearfix" role="navigation">
             <div class="nav-previous clearfix">
-                <a title="2019 国庆小活动" href="https://moedog.org/1226.html">&lt; 上一篇</a>
+                @if(isset($prev_article))
+                <a title="{{$prev_article->title}}" href="{{route('web.article.info',[$prev_article->id])}}">&lt; 上一篇</a>
+                    @endif
             </div>
             <div class="nav-next">
-                <a title="发个动态证明我还活着" href="https://moedog.org/1244.html">下一篇 &gt;</a>
+                @if(isset($next_article))
+                <a title="{{$next_article->title}}" href="{{route('web.article.info',[$next_article->id])}}">下一篇 &gt;</a>
+                    @endif
             </div>
         </nav>
 
 
         <div id="comments" class="comments-area">
-            <ol class="comment-list">
+          {{--  <ol class="comment-list">
                 <li class="comment even thread-even depth-1 parent" id="comment-4615">
                     <div id="div-comment-4615" class="comment-body">
                         <div class="comment-author vcard">
@@ -152,19 +153,18 @@
                 <a class="page-numbers" href="https://moedog.org/1236.html/comment-page-1#comments">1</a>
                 <a class="page-numbers" href="https://moedog.org/1236.html/comment-page-2#comments">2</a>
                 <a class="page-numbers" href="https://moedog.org/1236.html/comment-page-3#comments">3</a>
-                <span aria-current="page" class="page-numbers current">4</span></div>
+                <span aria-current="page" class="page-numbers current">4</span></div>--}}
+
             <div id="respond" class="comment-respond">
                 <h4 id="reply-title" class="comment-reply-title">发表评论
                     <small><a rel="nofollow" id="cancel-comment-reply-link" href="#" style="display:none;">取消回复</a>
                     </small>
                 </h4>
-                <form action="https://moedog.org/wp-comments-post.php" method="post" id="commentform"
+                <form action="#" method="post" id="commentform"
                       class="comment-form"><p class="comment-notes">电子邮件地址不会被公开。必填项已用 * 标注</p>
                     <div class="comment form-group has-feedback">
-                        <div class="input-group"><textarea class="form-control" id="comment"
-                                                           placeholder="|´・ω・)ノ还不快点说点什么呀poi~" name="comment" rows="5"
-                                                           aria-required="true" required=""
-                                                           onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById('submit').click();return false}};"></textarea>
+                        <div class="input-group">
+                            <textarea class="form-control" id="comment" placeholder="|´・ω・)ノ还不快点说点什么呀poi~" name="comment" rows="5" aria-required="true" required="" onkeydown="if(event.ctrlKey){if(event.keyCode==13){document.getElementById('submit').click();return false}};"></textarea>
                         </div>
                         <div class="OwO">
 
@@ -208,5 +208,10 @@
                     </p></form>
             </div><!-- #respond -->
         </div>
+
+
+
+
+
     </article>
 @endsection

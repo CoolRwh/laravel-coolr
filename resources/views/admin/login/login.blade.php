@@ -3,13 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-{{--    <link rel="stylesheet" href="{{@asset('static/admin/css/theme.min.css')}}" id="stylesheetLight">--}}
     <link href="{{@asset('static/admin/css/font-awesome.min93e3.css')}}" rel="stylesheet">
     <link rel="stylesheet" href="{{@asset('static/admin/css/theme-dark.min.css')}}" id="stylesheetDark">
-
-
-
-
+    <link rel="icon" type="image/x-icon" href="./coolr.ico">
     <title>十清凉-登陆</title>
 </head>
 
@@ -21,14 +17,21 @@
     .avatar-title:hover{
         border-color:#2c7be4;
     }
+
 </style>
+
+
+
 <body class="d-flex align-items-center bg-auth border-top border-top-2 border-primary">
+
 
 
 
 <!-- CONTENT
 ================================================== -->
 <div class="container">
+
+
     <div class="row align-items-center">
         <div class="col-12 col-md-6 offset-xl-2 offset-md-1 order-md-2 mb-5 mb-md-0">
 
@@ -56,14 +59,31 @@
 
                 @csrf
                 <!-- Email address -->
-
                     @if ($errors->any())
                         @foreach ($errors->all() as $error)
-                          <li style="color: red">{{ $error }}</li>
+                            <div class="ibox-content" id="error">
+                                <div class="alert alert-danger alert-dismissable" >
+                                    {{ $error }}
+                                </div>
+                            </div>
                         @endforeach
                     @endif
-                <div class="form-group">
 
+                    @foreach (['danger', 'warning', 'success','info'] as $msg)
+                        @if(session()->has($msg))
+                            <div class="ibox-content" id="error">
+                                <div class="alert alert-{{$msg}} alert-dismissable" >
+                                    {{ session()->get($msg)}}
+                                </div>
+                            </div>
+
+                        @endif
+
+
+                    @endforeach
+
+
+                <div class="form-group">
                     <!-- Label -->
                     <label>Username or email address</label>
 
@@ -159,6 +179,13 @@
 <!-- Libs JS -->
 <script src="{{@asset('static/admin/js/jquery.min.js')}}"></script>
 <script>
+
+
+    $('#error').show();
+    setTimeout(function () {
+        $('#error').hide();
+    },3000)
+
 
     $('.eye').click(function () {
         let password = document.getElementById("password");

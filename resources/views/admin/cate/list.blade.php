@@ -21,8 +21,10 @@
                 <td>{{$cate->cate_name}}</td>
                 <td>{{$cate->created_at}}</td>
                 <td>
-                    <a  type="button" class="btn btn-outline btn-success" href="{{route('admin.cate.edit',[$cate->id])}}">修改</a>
-                    <a class="btn btn-outline btn-danger delBtn " data-msg="{{$cate->cate_name}}" data-url="cate/{{$cate->id}}">删除</a>
+                    <a type="button" class="btn btn-outline btn-success"
+                       href="{{route('admin.cate.edit',[$cate->id])}}">修改</a>
+                    <a class="btn btn-outline btn-danger delBtn " data-msg="{{$cate->cate_name}}"
+                       data-url="cate/{{$cate->id}}">删除</a>
                 </td>
             </tr>
 

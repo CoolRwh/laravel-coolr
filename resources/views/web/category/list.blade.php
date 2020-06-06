@@ -2,7 +2,7 @@
 
 
 @section('title')
-    {{$cate_name}}-十清凉！
+    十清凉! - {{$cate_name}}
     @endsection
 
 @section('article_title')

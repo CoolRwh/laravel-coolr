@@ -11,10 +11,8 @@ class CateController extends Controller
 {
 
     /**
-     * @info 栏目列表页面
-     *
-     * @param  \App\model\Cate  $cate
-     *
+     * 栏目列表页面
+     * @param \App\model\Cate $cate
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index(Cate $cate)
@@ -26,7 +24,7 @@ class CateController extends Controller
 
     /**
      * @info 栏目添加页面
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return View
      */
     public function create()
     {
@@ -34,39 +32,37 @@ class CateController extends Controller
         return view('admin.cate.cate_add_edit');
     }
 
-    /** @info 栏目添加
-     * @param  \App\Http\Requests\CateRequest  $request
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+    /**
+     * 栏目添加
+     * @param $request
+     * @return void
      */
     public function store(CateRequest $request)
     {
-        $cate            = new Cate();
+        $cate = new Cate();
         $cate->cate_name = $request->input('cate_name');
 
         $cate->save();
+
         return redirect('admin/cate')->with('success', '添加成功！');
     }
 
     /**
-     * @info 栏目详细信息
-     *
-     * @param $id
+     * 栏目详细信息
+     * @param int $id
      */
-    public function show($id)
+    public function show(int $id)
     {
         //
-
     }
 
     /**
-     * @info 栏目修改页面
-     *
-     * @param $id
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * 栏目修改页面
+     * @access public
+     * @param int $id
+     * @return void
      */
-    public function edit($id)
+    public function edit(int $id)
     {
         $cates = Cate::find($id);
 
@@ -74,18 +70,16 @@ class CateController extends Controller
     }
 
     /**
-     * @info    栏目修改
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param $id
-     *
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     *栏目修改
+     * @param Request $request
+     * @param int $id
+     * @return void
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $id)
     {
         //
         $res = Cate::where('id', $id)->update(
-          ['cate_name' => $request->input('cate_name')]
+            ['cate_name' => $request->input('cate_name')]
         );
         if ($res) {
             return redirect('admin/cate')->with('success', '修改成功!');
@@ -94,13 +88,11 @@ class CateController extends Controller
     }
 
     /**
-     * @info 栏目删除
-     *
-     * @param $id
-     *
-     * @return \Illuminate\Http\JsonResponse
+     * 栏目删除
+     * @param int $id
+     * @return void
      */
-    public function destroy($id)
+    public function destroy(int $id)
     {
         $res = Cate::destroy($id);
         if ($res) {

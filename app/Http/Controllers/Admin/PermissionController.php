@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Model\Permission;
 use App\Http\Controllers\Controller;
+use App\User;
 use Illuminate\Http\Request;
 
 class PermissionController extends Controller
@@ -16,6 +17,9 @@ class PermissionController extends Controller
     public function index()
     {
         //
+
+
+
         $permissions = Permission::all();
 
         return view('admin.permission.list',compact('permissions'));
@@ -29,6 +33,7 @@ class PermissionController extends Controller
     public function create(Permission $permission)
     {
         //
+        if (!empty(\request()->password)){}
         $pid = $permission->where('pid',0)->get();
         return view('admin.permission.add_edit',compact('pid'));
     }
@@ -83,6 +88,11 @@ class PermissionController extends Controller
     public function update(Request $request, $id)
     {
         //
+        if (empty($request->password)){
+            $password = encrypt($request->password);
+            User::where('id',$id)->update($request->all());
+        }
+
     }
 
     /**

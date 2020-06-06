@@ -5,22 +5,40 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="Cache-Control" content="no-siteapp" />
     <link href="/static/admin/css/bootstrap.min14ed.css" rel="stylesheet">
-    <link href="/static/admin/css/font-awesome.min93e3.css" rel="stylesheet">
     <link href="/static/admin/css/animate.min.css" rel="stylesheet">
     <link href="/static/admin/css/style.min862f.css" rel="stylesheet">
-    <link href="/static/admin/css/plugins/iCheck/custom.css" rel="stylesheet">
-    <link href="/static/admin/css/plugins/summernote/summernote.css" rel="stylesheet">
-    <link href="/static/admin/css/plugins/summernote/summernote-bs3.css" rel="stylesheet">
-    <!--图片上传-->
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/plugins/webuploader/webuploader.css">
-    <link rel="stylesheet" type="text/css" href="/static/admin/css/demo/webuploader-demo.min.css">
+    <link href="{{@asset('static/web/css/mdui.min.css')}}" rel="stylesheet">
+{{--    图片上传--}}
+    <link href="{{@asset('static/web/css/font-awesome.min.css')}}" rel="stylesheet">
+    <link href="{{@asset('static/admin/plugins/fileinput/js/locales/zh.js')}}" rel="stylesheet">
+    <link href="{{@asset('static/admin/plugins/fileinput/css/fileinput.css')}}" rel="stylesheet">
+{{--    富文本--}}
+    <link href="{{@asset('static/admin/plugins/fileinput/css/fileinput.css')}}" rel="stylesheet">
 
 </head>
+<style>
+    .mdui-checkbox{
+        padding-right: 20px;
+    }
+    .form-group{
+      margin-top: 10px;
+    }
+</style>
 
 <body class="gray-bg">
 
 <div class="wrapper wrapper-content  animated fadeInRight">
     <div class="row">
+
+        @if(!isset($articles))
+            <form action="{{route('admin.article.store')}}" method="post">
+                @csrf
+            @else
+                    <form action="{{route('admin.article.store',[$articles->id])}}" method="post">
+                        @method('PUT')
+            @endif
+
+
 
         <div class="col-sm-8">
             <div class="ibox">
@@ -33,12 +51,16 @@
                     <div class="row">
                         <div class="col-sm-12">
                             <div class="ibox float-e-margins">
-                                <div class="ibox-content no-padding" >
+                                <div class="ibox-content no-padding"  >
+                                    <textarea style="height:500px;" name="content" id="editor" >
 
-                                    <div class="summernote" style="height: 100px;" >
+                                        {{old('content')}}
+                                    </textarea>
 
+                                {{--    <div class="summernote" style="height: 100px;" >
 
-                                    </div>
+                                        的对对对
+                                    </div>--}}
 
                                 </div>
                             </div>
@@ -65,118 +87,112 @@
                     </p>
 
                     <div class="ibox-content">
-                        <form method="get" class="form-horizontal">
                             <div class="form-group">
-                                <label class=" control-label">文章标题:</label>
-                                <div class="col-sm-12">
-                                    <input type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="hr-line-dashed"></div>
 
-                            <div class="form-group">
-                                <!-- <label class=" control-label">文章缩略图：</label>
-                                 <div class="col-sm-12">
-                                     <img width="240" height="140" src="/static/index/images/about.jpg">
-                                 </div>-->
-
-
-                                <div class="ibox-content">
-                                    <div class="page-container">
-                                        <p>文章缩略图：</p>
-                                        <div id="uploader" class="wu-example">
-                                            <div class="queueList">
-                                                <div id="dndArea" class="placeholder">
-                                                    <div id="filePicker"></div>
-                                                    <p>或将照片拖到这里，单次最多可选300张</p>
-                                                </div>
-                                            </div>
-                                            <div class="statusBar" style="display:none;">
-                                                <div class="progress">
-                                                    <span class="text">0%</span>
-                                                    <span class="percentage"></span>
-                                                </div>
-                                                <div class="info"></div>
-                                                <div class="btns">
-                                                    <div id="filePicker2"></div>
-                                                    <div class="uploadBtn">开始上传</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="mdui-textfield mdui-textfield-floating-label">
+                                    <label class="mdui-textfield-label">文章标题</label>
+                                    <textarea class="mdui-textfield-input" name="title" maxlength="50"></textarea>
                                 </div>
 
-
-
                             </div>
+{{--文章分类--}}
+                        <div class="form-group">
+                            <div >
+                                <label >文章所属分类：</label>
+                                <select class="mdui-select" mdui-select="{position: 'bottom'}" name="cate_id">
 
+                                    @foreach($cates as $k)
+                                    <option  value="{{$k->id}}">{{$k->cate_name}}</option>
+                                        @endforeach
+                                </select>
+                            </div>
+                        </div>
 
-
-
-                            <div class="hr-line-dashed"></div>
-
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">标签</label>
-                                <div class="col-sm-10">
-                                    <label class="checkbox-inline i-checks">
-                                        <input type="checkbox" value="1">生活</label>
-                                    <label class="checkbox-inline i-checks">
-                                        <input type="checkbox" value="2">游戏</label>
-                                    <label class="checkbox-inline i-checks">
-                                        <input type="checkbox" value="3">php</label>
-                                    <label class="checkbox-inline i-checks">
-                                        <input type="checkbox" value="4">ThinkPhp</label>
-                                    <label class="checkbox-inline i-checks">
-                                        <input type="checkbox" value="5">laravel</label>
-                                    <label class="checkbox-inline i-checks">
-                                        <input type="checkbox" value="6">linux</label>
+{{--                        文章标签--}}
+                            <div class="form-group ">
+                                <label >标签</label>
+                                <div class="mdui-divider"></div>
+                                <div >
+                                    @foreach($tags as $key)
+                                    <label class="mdui-checkbox">
+                                        <input type="checkbox" name="tag_id[]" value="{{$key->id}}"/>
+                                        <i class="mdui-checkbox-icon"></i>
+                                        {{$key->tag_name}}
+                                    </label>
+                                        @endforeach
                                 </div>
                             </div>
-
-                            <div class="hr-line-dashed"></div>
-                            <div class="form-group">
-                                <label class="col-sm-2 control-label">推荐</label>
-                                <div class="col-sm-10">
-                                    <label class="checkbox-inline i-checks">
-                                        <input type="checkbox" value="1">是</label>
-                                </div>
+                        {{--                        是否推荐--}}
+                        <div class="form-group">
+                            <label >是否发布【NO | YES】</label>
+                            <div class="mdui-divider"></div>
+                            <div >
+                                <label class="mdui-switch">
+                                    <input type="checkbox" name="isopen"  checked="">
+                                    <i class="mdui-switch-icon"></i>
+                                </label>
                             </div>
-                        </form>
+                        </div>
+                        {{--                        缩略图--}}
+                        <div class="form-group">
+                            <label >文章缩略图</label>
+                            <div class="mdui-divider"></div>
+                            <div >
+                                <div class="form-group">
+                                    <input id="file-5" class="file" type="file" multiple data-preview-file-type="any" data-upload-url="{{route('admin.image.update')}}">
+                                    <input type="hidden" name="titlepic" value="http://log.coolr.top/static/web/images/tu.jpg">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn btn-primary">保存</button>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
+</form>
     </div>
 </div>
 
-<script src="/static/admin/js/jquery.min.js"></script>
-<script src="/static/admin/js/bootstrap.min.js"></script>
-<script src="/static/admin/js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
-<script src="/static/admin/js/content.min.js"></script>
-<script src="/static/admin/js/plugins/summernote/summernote.min.js"></script>
-<script src="/static/admin/js/plugins/summernote/summernote-zh-CN.js"></script>
-<script src="/static/admin/js/plugins/iCheck/icheck.min.js"></script>
+<script src="{{@asset('static/web/js/jquery.min.js')}}"></script>
+<script src="{{@asset('static/web/js/mdui.min.js')}}"></script>
+<script src="{{@asset('static/admin/js/bootstrap.min.js')}}"></script>
+<script src="{{@asset('static/admin/plugins/fileinput/js/fileinput.js')}}"></script>
+<script src="{{@asset('static/admin/plugins/fileinput/js/locales/zh.js')}}"></script>
+{{--富文本--}}
+<script type="text/javascript" charset="utf-8" src="{{@asset('static/admin/plugins/ueditor/ueditor.config.js')}}"></script>
+<script type="text/javascript" charset="utf-8" src="{{@asset('static/admin/plugins/ueditor/ueditor.all.min.js')}}"></script>
+<!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
+<!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
+<script type="text/javascript" charset="utf-8" src="{{@asset('static/admin/plugins/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
 
-<script src="/static/admin/js/plugins/webuploader/webuploader.min.js"></script>
-<script src="/static/admin/js/demo/webuploader-demo.min.js"></script>
-
-
-<script>
-
-    var BASE_URL = 'http://coolr.top/public/static/admin/';
-
-
-    $(document).ready(function(){
-        $(".summernote").summernote({lang:"zh-CN"})});
-    var edit=function(){
-        $("#eg").addClass("no-padding");
-        $(".click2edit").summernote({lang:"zh-CN",focus:true})};
-    var save=function(){$("#eg").removeClass("no-padding");
-        var aHTML=$(".click2edit").code();$(".click2edit").destroy()};
-
-    $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+<script type="text/javascript">
+    console.log('ssssss');
 </script>
-<script type="text/javascript" src="http://tajs.qq.com/stats?sId=9051096" charset="UTF-8"></script>
+<script type="text/javascript">
+    var ue = UE.getEditor('editor');
+</script>
+
+<script type="text/javascript">
+    $("#file-5").fileinput({
+        language: 'zh', //设置语言
+        uploadUrl: '#', // 单独上传可以写入上传地址   上面的data-upload-url="#" 也可以写上地址  这样就可以在显示框中上传了
+        allowedFileExtensions : ['jpg', 'png','gif','jpeg'],
+        overwriteInitial: false,   //忘记了这个
+        maxFileSize: 1000,       //单个文件大小限制 Kb
+        maxFilesNum: 2,
+        maxFileCount:1,     //最大可上传几张图片
+        dropZoneEnabled:false, //是否显示图片拖拽区域
+        showUpload: true,   //是否显示上传标志
+        showCaption: true,    //是否显示下框
+        allowedFileTypes: ['image', 'video', 'flash'],
+    });
+</script>
+
 
 
 

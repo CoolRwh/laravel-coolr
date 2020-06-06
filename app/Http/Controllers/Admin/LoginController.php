@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
 
 class LoginController extends Controller
 {
@@ -32,6 +33,18 @@ use AuthenticatesUsers;
     public function showLoginForm()
     {
         return view('admin.login.login');
+    }
+
+
+    public function login(Request $request)
+    {
+        $credentials = $request->only('username', 'password');
+        if (auth('admin')->attempt($credentials)) {
+            session()->flash('success','登录成功！');
+            return redirect(route('admin'));
+        }else{
+            return redirect(route('admin.login'))->with('danger','用户名或者密码错误!');
+        }
     }
 
     /**
