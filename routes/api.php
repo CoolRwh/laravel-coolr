@@ -47,14 +47,17 @@ $api->version('v1',['middleware'=>'cors'] ,function ($api) {
 });
 
 $api->version('v2',function ($api){
+    $api->get('some',function (){
+       dd('some');
+    });
 
-    $api->group(['namespace'=>'App\Http\Controllers\Api'],function ($api){
+/*    $api->group(['namespace'=>'App\Http\Controllers\Api'],function ($api){
 
-        $api->post('me',function (){
+        $api->get('me',function (){
             echo 'me-v2';
         });
 
-    });
+    });*/
 
 });
 

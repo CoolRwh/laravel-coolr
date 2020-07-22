@@ -14,6 +14,7 @@
         "dingo/api": "^2.2",
         "fideloper/proxy": "^4.0",
         "laravel/framework": "^6.2",
+        "laravel/horizon": "^4.3",
         "laravel/tinker": "^2.0",
         "socialiteproviders/github": "dev-master",
         "socialiteproviders/qq": "^3.0",

@@ -15,8 +15,6 @@ class RoleController extends Controller
      */
     public function index()
     {
-        //
-        /*dd(request()->route()->getActionName());*/
         $roles = Role::orderby('sort','asc')->get();
         return view('admin.role.list',compact('roles'));
     }

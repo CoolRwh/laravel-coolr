@@ -15,6 +15,7 @@
     <link href="/static/admin/css/style.min862f.css" rel="stylesheet">
     <link href="{{asset('static/admin/layui/css/layui.css')}}" rel="stylesheet">
     <link href="{{@asset('static/web/css/mdui.min.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 
 </head>
 
@@ -22,7 +23,7 @@
 
 <div class="wrapper wrapper-content animated fadeInRight">
     @include('admin.layouts._message')
-
+<div class="app" id="app">
     <div class="row">
         <div class="col-sm-12">
             <div class="ibox-content forum-container">
@@ -47,10 +48,15 @@
             </div>
         </div>
     </div>
-
+</div>
+    <!-- import Vue before Element -->
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <!-- import JavaScript -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="{{@asset('static/admin/js/jquery.min.js')}}"></script>
 <script src="{{@asset('static/admin/js/bootstrap.min.js')}}"></script>
 <script  src="{{ asset('static/admin/layui/layui.all.js') }}"></script>
+
 
 <script>
     //修改页面
@@ -86,6 +92,23 @@
         return false;
     })
 </script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: function() {
+                return { visible: false }
+            },
+            created(){
+                this.getMsg();
+            },
+            methods:{
+                getMsg() {
+                    this.$message.success('这是一条消息提示');
+                }
+            }
+        })
+    </script>
 </body>
 
 </html>

@@ -85,6 +85,10 @@ class ArticleController extends Controller
     public function edit($id)
     {
         //
+        $article = Article::query()->find($id);
+        $cates  = Cate::query()->get();
+        $tags  = Tag::query()->get();
+        return view('admin.article.article_add_edit',compact('article','cates','tags'));
     }
 
     /**
